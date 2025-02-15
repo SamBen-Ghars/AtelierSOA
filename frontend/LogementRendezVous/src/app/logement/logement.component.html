@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Liste des Logements</h1>
+    
+    <div *ngFor="let logement of logements" class="card">
+      <h2>Référence: {{ logement.reference }}</h2>
+      <p><strong>Adresse:</strong> {{ logement.adresse }}</p>
+      <p><strong>Délégation:</strong> {{ logement.delegation }}</p>
+      <p><strong>Gouvernorat:</strong> {{ logement.gouvernorat }}</p>
+      <p><strong>Type:</strong> {{ logement.type }}</p>
+      <p><strong>Description:</strong> {{ logement.description }}</p>
+      <p><strong>Prix:</strong> {{ logement.prix | currency:'EUR' }}</p>
+  
+      <!-- Bouton Modifier -->
+      <button (click)="modifierLogement(logement)" class="btn btn-primary">Modifier</button>
+  
+      <!-- Bouton Supprimer -->
+      <button (click)="supprimerLogement(logement.reference)" class="btn btn-danger"> Supprimer</button>
+    </div>
+  </div>
+    
