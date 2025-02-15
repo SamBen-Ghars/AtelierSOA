@@ -33,9 +33,9 @@ public class LogementRessources {
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/delete")
-    public Response deleteLogement(Logement logement) {
-        help.deleteLogement(logement.getReference());
+    @Path("/delete/{ref}")
+    public Response deleteLogement(@PathParam(value = "ref") int ref) {
+        help.deleteLogement(ref);
         return Response.status(Response.Status.OK).header("Access-Control-Allow-Origin", "*")
                 .entity("Logement a été supprimé avec succès")
                 .build();

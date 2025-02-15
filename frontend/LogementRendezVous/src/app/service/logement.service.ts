@@ -24,7 +24,7 @@ export class LogementService {
 
   // Supprimer un logement
   deleteLogement(reference: number): Observable<string> {
-    return this.http.delete<string>(`${this.apiUrl}/delete`, { body: { reference } });
+    return this.http.delete<string>(`${this.apiUrl}/delete/${reference}`);
   }
 
   // Modifier un logement
